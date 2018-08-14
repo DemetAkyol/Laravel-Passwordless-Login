@@ -10,7 +10,7 @@ class MagicAuthentication
 {
 
     protected $request;
-    protected $identifier = 'email';
+    protected $identifier = 'phone';
 
     public function __construct(Request $request)
     {
@@ -21,20 +21,24 @@ class MagicAuthentication
 
     }
 
-    public function requestlink()
-    {
+    public function senLoginCode(){
 
         $user = $this->getUserByIdentifier($this->request->get($this->identifier));
+        $user->storeToken()->sendVerfCode([
 
-        $user->storeToken()->sendMagicLink([
 
-            'remember' => $this->request->has('remember'),
-            'email' => $user->email,
 
 
         ]);
 
+
+
+
+
+
     }
+
+
 
 
     public function getUserByIdentifier($value)
@@ -42,8 +46,17 @@ class MagicAuthentication
         return User::where($this->identifier, $value)->firstOrFail();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-

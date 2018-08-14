@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers\Auth;
 
-
-use App\Auth\MagicAuthentication;
+use App\Auth\SmsAuthentication;
 use App\Http\Controllers\Controller;
-use App\UserLoginToken;
+use App\UserLoginCode;
 use Auth;
 use Illuminate\Http\Request;
 
-class MagicLoginController extends Controller
+class SmsLoginController extends Controller
 {
 
-    public function show()
-    {
-        return view('auth.magic.login');
+public  function show(){
 
-    }
 
-    public function sendToken(Request $request, MagicAuthentication $auth)
+    return view('auth.magic.smsLogin');
+
+
+
+}
+    public function sendCode(Request $request, MagicAuthentication $auth)
     {
         $this->validateLogin($request);
-        $auth->requestlink();
+       //$auth->requestlink();
 
     }
 
@@ -30,14 +31,14 @@ class MagicLoginController extends Controller
 
         $this->validate($request, [
 
-            'email' => 'required|email|max:255|exists:users,email'
+            'phone' => 'required|exists:users,phone'
 
 
         ]);
 
 
     }
-
+/*
     public function validateToken(Request $request, UserLoginToken $token)
     {
 
@@ -48,5 +49,15 @@ class MagicLoginController extends Controller
 
     }
 
+*/
+
+
+
+
+
+
+
+
 
 }
+

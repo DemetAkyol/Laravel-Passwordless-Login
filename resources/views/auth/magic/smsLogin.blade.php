@@ -8,12 +8,12 @@
                     <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login/magic') }}" aria-label="{{ __('Login') }}">
+                        <form method="POST" action="{{ route('login/smsLogin') }}" aria-label="{{ __('Login') }}">
                             @csrf
 
-                            <div class="form-group row">s
+                            <div class="form-group row">
                                 <label for="email"
-                                       class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                       class="col-sm-4 col-form-label text-md-right">{{ __('Your Phone Number :') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -29,23 +29,12 @@
                             </div>
 
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember"
-                                               id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Send Magic Link') }}
+                                        {{ __('Send Verfy Code') }}
                                     </button>
 
                                     <a href="{{url('/login')}}" class="btn btn-link">Login with password instead </a>

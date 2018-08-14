@@ -80,6 +80,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+                    <?php echo php_ini_loaded_file(); ?>
                 </div>
 
                 <div class="links">
