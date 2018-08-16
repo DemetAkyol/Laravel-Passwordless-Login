@@ -81,6 +81,7 @@
                 <div class="title m-b-md">
                     Laravel
                     <?php echo php_ini_loaded_file(); ?>
+                  <!--  <?php phpinfo(); ?> -->
                 </div>
 
                 <div class="links">

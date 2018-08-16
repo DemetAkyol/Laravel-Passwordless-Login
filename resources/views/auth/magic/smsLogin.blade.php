@@ -8,21 +8,21 @@
                     <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login/smsLogin') }}" aria-label="{{ __('Login') }}">
+                        <form method="POST" action="{{ route('login/smsLogin?XDEBUG_SESSION_START=XDEBUG_SESSION') }}" aria-label="{{ __('Login') }}">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email"
+                                <label for="phone"
                                        class="col-sm-4 col-form-label text-md-right">{{ __('Your Phone Number :') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="phone" type="text"
+                                           class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
+                                           name="phone" value="{{ old('phone') }}" required autofocus>
 
-                                    @if ($errors->has('email'))
+                                    @if ($errors->has('phone'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                     @endif
                                 </div>

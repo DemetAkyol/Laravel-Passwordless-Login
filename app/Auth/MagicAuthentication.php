@@ -21,6 +21,7 @@ class MagicAuthentication
 
     }
 
+
     public function requestlink()
     {
 
@@ -35,6 +36,7 @@ class MagicAuthentication
         ]);
 
     }
+
 
 
     public function getUserByIdentifier($value)

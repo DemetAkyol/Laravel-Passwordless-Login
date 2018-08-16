@@ -3,17 +3,15 @@
 
 namespace App\Auth\Traits;
 
-use Mailgun\Mailgun;
 use App\Mail\MagicLoginRequested;
 use App\UserLoginToken;
-
+use Mailgun\Mailgun;
 
 trait MagicallyAuthenticatable
 {
 
     public function storeToken()
     {
-
         $this->token()->delete();
         $this->token()->create([
 
@@ -37,7 +35,7 @@ trait MagicallyAuthenticatable
     }
     public function buildLink(){
 
-
+        // bu mailde çalışıyodu
         return url('/login/magic/' . $this->user->token->token . '?' . http_build_query($this->options));
     }
     public function sendMagicLink(array $options)
@@ -56,5 +54,6 @@ trait MagicallyAuthenticatable
 
         //\Mail::to($this)->send(new MagicLoginRequested($this,$options));
     }
+
 
 }

@@ -23,6 +23,9 @@ class MagicLoginController extends Controller
         $this->validateLogin($request);
         $auth->requestlink();
 
+
+        return back();
+
     }
 
     public function validateLogin(Request $request)
@@ -40,6 +43,7 @@ class MagicLoginController extends Controller
 
     public function validateToken(Request $request, UserLoginToken $token)
     {
+
 
         $token->delete();
         Auth::login($token->user, $request->remember);

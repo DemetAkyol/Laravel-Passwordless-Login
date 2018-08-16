@@ -32,4 +32,13 @@ class MagicLoginRequested extends Mailable
 
         return url('/login/magic/' . $this->user->token->token . '?' . http_build_query($this->options));
     }
+    public function buildCode(){
+
+
+
+    return $this->user->tokenCode()->LoginCode;
+
+
+    }
+
 }
