@@ -11,7 +11,7 @@
                         <form method="POST" action="{{ route('login/magic') }}" aria-label="{{ __('Login') }}">
                             @csrf
 
-                            <div class="form-group row">s
+                            <div class="form-group row">
                                 <label for="email"
                                        class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
