@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+//login ile başlayanları group yaparak düzenle
 Route::get('login/magic', [ 'as' => 'login/magic', 'uses' => 'Auth\MagicLoginController@show']);
 Route::post('login/magic', [ 'as' => 'login/magic', 'uses' => 'Auth\MagicLoginController@sendToken']);
 Route::get ('login/magic/{token}', [ 'as' => 'login/magic/{token}', 'uses' => 'Auth\MagicLoginController@validateToken']);

@@ -4,7 +4,7 @@ namespace App\Auth;
 
 use App\Http\Requests;
 use App\User;
-use App\UserLoginCode;
+use App\Models\UserLoginCode;
 use Illuminate\Http\Request;
 
 

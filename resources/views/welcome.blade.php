@@ -71,7 +71,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login/magic') }}">Login</a>
+                        <a href="{{ route('login/choice') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
@@ -79,9 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                    <?php echo php_ini_loaded_file(); ?>
-                  <!--  <?php phpinfo(); ?> -->
+
+                     INDEX PAGE
+                  <!--  <?php phpinfo(); ?> <?php echo php_ini_loaded_file(); ?>-->
                 </div>
 
                 <div class="links">

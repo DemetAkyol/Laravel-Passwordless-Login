@@ -4,7 +4,7 @@
 namespace App\Auth\Traits;
 
 use App\Mail\MagicLoginRequested;
-use App\UserLoginToken;
+use App\Models\UserLoginToken;
 use Mailgun\Mailgun;
 
 trait MagicallyAuthenticatable
