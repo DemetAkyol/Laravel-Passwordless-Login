@@ -7,7 +7,7 @@ use App\Http\Requests;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\UserLoginCode;
+use App\MModels\UserLoginCode;
 class SmsLoginController extends Controller
 {
     protected $identifier = 'user_id';
@@ -64,7 +64,7 @@ public  function show(){
 
 
         return redirect('home');
-        //return Redirect::intended;
+
     }
 
 

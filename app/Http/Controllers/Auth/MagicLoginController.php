@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Auth\MagicAuthentication;
 use App\Http\Controllers\Controller;
-use App\UserLoginToken;
+use App\MModels\UserLoginToken;
 use Auth;
 use Illuminate\Http\Request;
 

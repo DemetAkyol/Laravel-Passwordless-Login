@@ -4,7 +4,7 @@
 namespace App\Auth\Traits;
 
 use App\Mail\MagicLoginRequested;
-use App\Models\UserLoginToken;
+use App\MModels\UserLoginToken;
 use Mailgun\Mailgun;
 
 trait MagicallyAuthenticatable
@@ -35,24 +35,23 @@ trait MagicallyAuthenticatable
     }
     public function buildLink(){
 
-        // bu mailde çalışıyodu
+
         return url('/login/magic/' . $this->user->token->token . '?' . http_build_query($this->options));
     }
     public function sendMagicLink(array $options)
     {
 
-     $asd=new MagicLoginRequested($this,$options);
-     $link=$asd->buildLink();
-        $mg = Mailgun::create('daadee9d1a9069a4cda67f4cac48681f-7efe8d73-fd45db81');
-        $mg->messages()->send('sandbox3f40fe311c8945778eb707440992b228.mailgun.org', [
-            'from' => 'demet.akyol44@gmail.com',
-            'to' => 'demet.akyol44@gmail.com',
+     $msg=new MagicLoginRequested($this,$options);
+     $link=$msg->buildLink();
+     $toMail=$msg->user->email;
+        $mg = Mailgun::create('');
+        $mg->messages()->send('sandboxxxxxxxxxxxxx.mailgun.org', [
+            'from' => 'dmt.akyol@hotmail.com',
+            'to' => $toMail,
             'subject' => 'Your Link To Login!',
             'text' => $link,
         ]);
 
-
-        //\Mail::to($this)->send(new MagicLoginRequested($this,$options));
     }
 
 

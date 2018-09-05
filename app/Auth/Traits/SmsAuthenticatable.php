@@ -4,7 +4,7 @@
 namespace App\Auth\Traits;
 
 use App\Http\Requests;
-use App\Models\UserLoginCode;
+use App\MModels\UserLoginCode;
 use infobip;
 
 trait SmsAuthenticatable
@@ -50,8 +50,8 @@ trait SmsAuthenticatable
 
 
         $code = $this->tokenCode->LoginCode;
-        $msg = "{ " . $code . "} Aktivasyon kodunuz";
-        $client = new infobip\api\client\SendSingleTextualSms(new infobip\api\configuration\BasicAuthConfiguration('hediyesepeti', 'hk159753'));
+        $msg = "{ " . $code . "} Aktivation kod";
+        $client = new infobip\api\client\SendSingleTextualSms(new infobip\api\configuration\BasicAuthConfiguration('', ''));
         $requestBody = new infobip\api\model\sms\mt\send\textual\SMSTextualRequest();
         $requestBody->setFrom('HDY SEPETI');
         $requestBody->setTo($data['phone']);

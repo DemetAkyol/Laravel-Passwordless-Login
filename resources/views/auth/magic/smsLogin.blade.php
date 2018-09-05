@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login/smsLogin?XDEBUG_SESSION_START=XDEBUG_SESSION') }}" aria-label="{{ __('Login') }}">
+                        <form method="POST" action="{{ route('login/smsLogin') }}" aria-label="{{ __('Login') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -33,7 +33,7 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" id="a1">
                                         {{ __('Send Verfy Code') }}
                                     </button>
 

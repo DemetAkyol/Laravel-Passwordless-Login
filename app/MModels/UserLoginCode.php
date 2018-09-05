@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\MModels;
 
-
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class UserLoginCode extends Model
 {
-    const EXPIRATION_TIME = 15; // minutes
-    //suse Traits\SmsAuthenticatable;
+    const EXPIRATION_TIME = 15;
 
     protected $table = 'users_login_codes';
     protected $fillable = [
